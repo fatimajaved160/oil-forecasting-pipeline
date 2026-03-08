@@ -18,13 +18,13 @@ st.markdown("*Forecasting model built with Facebook Prophet | Data from Yahoo Fi
 # Load data
 @st.cache_data
 def load_data():
-    oil = pd.read_csv("C:/Users/DEEBYTE COMPUTERS/Documents/oil-forecasting-pipeline/data/oil_prices_cleaned.csv", index_col=0, parse_dates=True)
+    oil = pd.read_csv("data/oil_prices_cleaned.csv", index_col=0, parse_dates=True)
     oil.columns = ["Price", "Year", "Month", "Day", "MA_7", "MA_30", "MA_90", "Daily_Change", "Pct_Change", "Volatility_30"]
     return oil
 
 @st.cache_data
 def load_forecast():
-    forecast = pd.read_csv("C:/Users/DEEBYTE COMPUTERS/Documents/oil-forecasting-pipeline/data/forecast.csv", parse_dates=["ds"])
+    forecast = pd.read_csv("data/forecast.csv", parse_dates=["ds"])
     return forecast
 
 load_data.clear()
